@@ -37,20 +37,49 @@
         </div>
 
         <div class="order-panel">
-          <form id="order-form">
+          <div class="info-note">
+            <strong>الشحن:</strong> متوفر إلى جميع ولايات الجزائر عبر شركة NAVEX DELIVERY
+          </div>
+
+          <form id="order-form" class="form-section" action="#" method="POST">
             <div class="field-grid">
               <div class="field-group">
-                <label for="quantity">الكمية</label>
-                <select id="quantity" name="quantity" onchange="calculateTotal()">
-                  <option value="1">1 حذاء</option>
-                  <option value="2">2 حذاء</option>
+                <label for="quantity">اختر الكمية (العرض):</label>
+                <select id="quantity" name="quantity" required onchange="calculateTotal()">
+                  <option value="1" selected>حذاء واحد (2800 دج)</option>
+                  <option value="2">حذاءين - عرض خاص (5500 دج)</option>
                 </select>
               </div>
 
               <div class="field-group">
-                <label for="wilaya">الولاية</label>
-                <select id="wilaya" name="wilaya" onchange="calculateTotal()"></select>
+                <label for="size">اختر المقاس:</label>
+                <select id="size" name="size" required>
+                  <option value="">-- اختر المقاس --</option>
+                  <option value="39">39</option>
+                  <option value="40">40</option>
+                  <option value="41">41</option>
+                  <option value="42">42</option>
+                  <option value="43">43</option>
+                  <option value="44">44</option>
+                </select>
               </div>
+            </div>
+
+            <div class="field-grid">
+              <div class="field-group">
+                <label for="firstname">الاسم الكامل:</label>
+                <input type="text" id="firstname" name="firstname" placeholder="أدخل اسمك الكامل" required />
+              </div>
+
+              <div class="field-group">
+                <label for="phone">رقم الهاتف:</label>
+                <input type="tel" id="phone" name="phone" placeholder="مثال: 0550000000" required />
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="wilaya">اختر ولايتك:</label>
+              <select id="wilaya" name="wilaya" required onchange="calculateTotal()"></select>
             </div>
 
             <div class="field-group">
