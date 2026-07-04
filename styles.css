@@ -1,0 +1,264 @@
+:root {
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --accent: #ff4d8d;
+  --accent-dark: #d63f78;
+  --success: #10b981;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Tahoma", sans-serif;
+  direction: rtl;
+  background: linear-gradient(135deg, #fff5f8 0%, var(--bg) 100%);
+  color: var(--text);
+}
+
+.page-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.product-card {
+  width: min(100%, 980px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+}
+
+.product-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 24px;
+  padding: 24px;
+}
+
+.product-media {
+  background: linear-gradient(135deg, #fde8f0 0%, #eef2ff 100%);
+  border-radius: 18px;
+  min-height: 360px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f7ddeb 0%, #dde7ff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 14px;
+}
+
+.product-image::before,
+.product-image::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+}
+
+.product-image::before {
+  width: 240px;
+  height: 240px;
+  background: rgba(255, 255, 255, 0.55);
+  bottom: -80px;
+  right: -40px;
+}
+
+.product-image::after {
+  width: 180px;
+  height: 180px;
+  background: rgba(255, 255, 255, 0.35);
+  top: -40px;
+  left: -20px;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.promo-pill {
+  display: inline-flex;
+  align-self: flex-start;
+  background: var(--accent);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+.product-subtitle {
+  margin: 0 0 16px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.price-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.price-current {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.feature-list {
+  padding-right: 20px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.order-panel {
+  padding: 0 24px 24px;
+}
+
+form {
+  display: grid;
+  gap: 18px;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label {
+  font-weight: 700;
+}
+
+select,
+input[type="radio"] {
+  accent-color: var(--accent);
+}
+
+select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: white;
+  font-size: 15px;
+}
+
+.delivery-options {
+  display: grid;
+  gap: 10px;
+}
+
+.delivery-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: #f9fafb;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.summary-card {
+  background: #fff8fb;
+  border: 1px dashed var(--accent);
+  border-radius: 14px;
+  padding: 16px;
+  display: grid;
+  gap: 10px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--muted);
+}
+
+.summary-row.total {
+  border-top: 1px solid #ffdce8;
+  padding-top: 10px;
+  color: var(--text);
+  font-size: 18px;
+}
+
+.buy-button {
+  border: 0;
+  border-radius: 12px;
+  background: var(--accent);
+  color: white;
+  padding: 14px 16px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.buy-button:hover {
+  background: var(--accent-dark);
+}
+
+@media (max-width: 768px) {
+  .page-shell {
+    padding: 12px;
+  }
+
+  .product-hero {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  .field-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .order-panel {
+    padding: 0 16px 16px;
+  }
+}

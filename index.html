@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>صفحة المنتج</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="product-card" aria-label="صفحة المنتج">
+        <div class="product-hero">
+          <div class="product-media">
+            <div class="product-image" aria-hidden="true">
+              <img src="assets/product-img-shoes-1.jpg" alt="حذاء رجالي كلاسيكي أنيق" />
+            </div>
+          </div>
+
+          <div class="product-info">
+            <span class="promo-pill">عرض خاص</span>
+            <h1>حذاء رجالي كلاسيكي أنيق 👞</h1>
+            <p class="product-subtitle">
+              تصميم عصري يناسب الاستخدام اليومي مع تشطيب مريح ومناسب للملابس الكلاسيكية والحديثة.
+            </p>
+
+            <div class="price-block">
+              <span class="price-current">2800 دج</span>
+              <span class="old-price">4500 دج</span>
+            </div>
+
+            <ul class="feature-list">
+              <li>حذاء واحد بـ 2800 دج أو حذاءين بـ 5500 دج</li>
+              <li>المقاسات المتوفرة: من 39 إلى 44</li>
+              <li>الدفع عند الاستلام متاح</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="order-panel">
+          <form id="order-form">
+            <div class="field-grid">
+              <div class="field-group">
+                <label for="quantity">الكمية</label>
+                <select id="quantity" name="quantity" onchange="calculateTotal()">
+                  <option value="1">1 حذاء</option>
+                  <option value="2">2 حذاء</option>
+                </select>
+              </div>
+
+              <div class="field-group">
+                <label for="wilaya">الولاية</label>
+                <select id="wilaya" name="wilaya" onchange="calculateTotal()"></select>
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label>طريقة التوصيل</label>
+              <div class="delivery-options">
+                <label class="delivery-option">
+                  <input type="radio" name="delivery_type" value="home" checked onchange="calculateTotal()" />
+                  <span>🚚 التوصيل إلى باب المنزل</span>
+                </label>
+                <label class="delivery-option">
+                  <input type="radio" name="delivery_type" value="desk" onchange="calculateTotal()" />
+                  <span>🏪 استلام من مكتب شركة الشحن</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="summary-card" aria-live="polite">
+              <div class="summary-row">
+                <span>💰 سعر المنتج</span>
+                <strong id="summary-product-price">0 دج</strong>
+              </div>
+              <div class="summary-row">
+                <span>📦 ثمن التوصيل</span>
+                <strong id="summary-shipping-price">0 دج</strong>
+              </div>
+              <div class="summary-row total">
+                <span>🛍️ الإجمالي</span>
+                <strong id="summary-total-price">0 دج</strong>
+              </div>
+            </div>
+
+            <button class="buy-button" type="submit">تأكيد الطلب</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
