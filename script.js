@@ -80,7 +80,7 @@ function populateWilayas() {
 
 function calculateTotal() {
   const qty = document.getElementById("quantity").value;
-  const productPrice = qty === "2" ? 5500 : 2800;
+  const productPrice = qty === "3" ? 8000 : 5500 : 2800;
   const wilayaId = document.getElementById("wilaya").value;
   const deliveryType = document.querySelector("input[name='delivery_type']:checked").value;
   const shippingPrice = wilayaId && shippingRates[wilayaId] ? shippingRates[wilayaId][deliveryType] : 0;
